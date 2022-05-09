@@ -44,3 +44,5 @@ public class character : MonoBehaviour
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 }
+
+//;'p
