@@ -8,10 +8,10 @@ public class character : MonoBehaviour
     private int lives = 100;
 
     [SerializeFiled]
-    private float speed = 3.0F;
+    private const float speed = 3.0F;
 
     [SerializeFiled]
-    private float jupmForce = 15.0F;
+    private const float jumpForce = 15.0F;
 
 
     new private Rigidbody2D rigidbody;
@@ -41,6 +41,6 @@ public class character : MonoBehaviour
     
     private void Jump()
     {
-        rigidbody.AddForce(transform.up * jupmForce, ForceMode2D.Impulse);
+        rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
-}
+}//$$$$
