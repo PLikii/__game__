@@ -43,9 +43,4 @@ public class character : MonoBehaviour
     {
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
-<<<<<<< HEAD
 }
-//Лол, о це я програміст
-=======
-}//$$$$
->>>>>>> main
