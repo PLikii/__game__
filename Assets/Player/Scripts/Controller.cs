@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controler : MonoBehaviour
+public class Controller : MonoBehaviour
 {
 
     //in order to control both players using 1 script.
