@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIdx: 0
+  shiftSpeed: 600
   movementSpeed: 300
   jumpForce: 300
   whatIsGround:
