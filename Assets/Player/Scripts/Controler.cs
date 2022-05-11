@@ -35,8 +35,11 @@ public class Controler : MonoBehaviour
     //rb
     private Rigidbody2D rb;
 
+    Animator animator;
 
 
+    bool run;
+    //bool jump;
 
     // Start is called before the first frame update
     void Start()
@@ -44,41 +47,41 @@ public class Controler : MonoBehaviour
         doubleJumpReady = true;
         rb = GetComponent<Rigidbody2D>();
         facingRight = true;
+        animator = GetComponent<Animator>();
     }
 
 
     void Update()
     {
-
-    if (Input.GetKey(KeyCode.LeftShift))
-            speed = shiftSpeed;
-
-    if(!Input.GetKey(KeyCode.LeftShift))
-            speed = movementSpeed;
+        run = false;
         
-    if (Input.GetKey(KeyCode.A))
-        Move(-1);
+        //if(jump == true || grounded == false)
+            //jump = false;
+        //else
+             //jump = false;
 
-    if (Input.GetKey(KeyCode.D))
-        Move(1);
+        
 
-    if (Input.GetKeyDown(KeyCode.W))
-        Jump();
+        if (Input.GetKey(KeyCode.LeftShift))
+                speed = shiftSpeed;
 
-    if (Input.GetKeyDown(KeyCode.Space))
-        Jump();
+        if(!Input.GetKey(KeyCode.LeftShift))
+                speed = movementSpeed;
+        
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            Move(-1);
 
-    
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            Move(1);
 
-    if (Input.GetKey(KeyCode.LeftArrow))
-    Move(-1);
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+            Jump();
 
-    if (Input.GetKey(KeyCode.RightArrow))
-        Move(1);
-
-    if (Input.GetKeyDown(KeyCode.UpArrow))
-        Jump();
-
+        if (run == false)
+        {
+            animator.SetBool("Run", false);
+            //animator.SetBool("Jump", false);
+        }
     }
 
 
@@ -111,6 +114,10 @@ public class Controler : MonoBehaviour
 
     public void Move(int dir)
     {
+        run = true;
+        animator.SetBool("Run", true);
+        //animator.SetBool("Jump", false);
+
         //Flip the player.
         Flips(dir);
 
@@ -142,6 +149,11 @@ public class Controler : MonoBehaviour
 
     protected void Jump()
     {
+        run = true;
+        animator.SetBool("Run", false);
+        //animator.SetBool("Jump", true);
+
+
         if (grounded)
         {
             rb.AddForce(Vector2.up * jumpForce);
@@ -151,8 +163,7 @@ public class Controler : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             doubleJumpReady = false;
-            Debug.Log("I am double jumping");
-
+            //Debug.Log("I am double jumping");
         }
     }
 }
