@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 140553773}
   - component: {fileID: 140553774}
   - component: {fileID: 140553775}
+  - component: {fileID: 140553776}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -228,6 +229,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &140553776
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140553769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c8be2fd0783ccc4ba9010b67855283d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &318206419
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 732218107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13124922, y: 0.13124922, z: 0.13124922}
+  m_LocalScale: {x: 0.1312492, y: 0.13124922, z: 0.1312492}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 140553772}
@@ -435,7 +456,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e88e0d537153bd4db8c91486abfaed8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6320f15453ce6f745b3d9a59d91263d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
