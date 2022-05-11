@@ -52,8 +52,10 @@ public class Controler : MonoBehaviour
         Move(1);
     if (Input.GetKeyDown(KeyCode.W))
         Jump();
-        
-    if (Input.GetKey(KeyCode.LeftArrow))
+    if (Input.GetKeyDown(KeyCode.Space))
+        Jump();
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         Move(-1);
     if (Input.GetKey(KeyCode.RightArrow))
         Move(1);
