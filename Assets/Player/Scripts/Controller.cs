@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour
 
 
     bool run;
-    //bool jump;
+    bool jump;
 
     // Start is called before the first frame update
     void Start()
@@ -56,10 +56,10 @@ public class Controller : MonoBehaviour
         
         run = false;
         
-        //if(jump == true || grounded == false)
-            //jump = true;
-        //else
-            //jump = false;
+        if(jump == true || grounded == false)
+            jump = true;
+        else
+            jump = false;
 
         
 
@@ -81,7 +81,7 @@ public class Controller : MonoBehaviour
         if (run == false)
         {
             animator.SetBool("Run", false);
-            //animator.SetBool("Jump", false);
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -118,7 +118,7 @@ public class Controller : MonoBehaviour
         Debug.Log("Move");
         run = true;
         animator.SetBool("Run", true);
-        //animator.SetBool("Jump", false);
+        animator.SetBool("Jump", false);
 
         //Flip the player.
         Flips(dir);
