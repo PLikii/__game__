@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour
 
 
     bool run;
-    //bool jump;
+    bool jump;
 
     // Start is called before the first frame update
     void Start()
@@ -53,12 +53,13 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
+        
         run = false;
         
-        //if(jump == true || grounded == false)
-            //jump = false;
-        //else
-             //jump = false;
+        if(jump == true || grounded == false)
+            jump = true;
+        else
+            jump = false;
 
         
 
@@ -80,7 +81,7 @@ public class Controller : MonoBehaviour
         if (run == false)
         {
             animator.SetBool("Run", false);
-            //animator.SetBool("Jump", false);
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -99,10 +100,10 @@ public class Controller : MonoBehaviour
             doubleJumpReady = true;
 
     }
-
+    
     private void SlowDown()
     {
-
+        Debug.Log("SlowDown");
         if (moving) return;
 
         //if player is not moving, slow them down.
@@ -114,9 +115,10 @@ public class Controller : MonoBehaviour
 
     public void Move(int dir)
     {
+        Debug.Log("Move");
         run = true;
         animator.SetBool("Run", true);
-        //animator.SetBool("Jump", false);
+        animator.SetBool("Jump", false);
 
         //Flip the player.
         Flips(dir);
@@ -140,6 +142,8 @@ public class Controller : MonoBehaviour
 
     private void Flips(int dir)
     {
+        Debug.Log("Flips");
+
         if (facingRight && dir == -1 || !facingRight && dir == 1)
         {
             facingRight = !facingRight;
@@ -149,9 +153,10 @@ public class Controller : MonoBehaviour
 
     protected void Jump()
     {
+        Debug.Log("Jump");
         run = true;
         animator.SetBool("Run", false);
-        //animator.SetBool("Jump", true);
+        animator.SetBool("Jump", true);
 
 
         if (grounded)
@@ -167,4 +172,3 @@ public class Controller : MonoBehaviour
         }
     }
 }
-
